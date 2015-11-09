@@ -24,7 +24,7 @@ public class ToDoList implements Serializable {
 	}
 	
 	public int getCountOfDone() {
-		return (int) toDos.stream().filter((todo) -> todo.isDone()).count();
+		return (int) toDos.stream().filter(ToDo::isDone).count();
 	}
 	
 	public int getCountOfTodo() {

@@ -11,10 +11,13 @@
 </h:head>
 
 <body>
-
+		<header>
+			<h:outputText value="Meine ToDo-Liste" class="tableheader"/>
+		</header>
     <h:form id="form"  >
-    	<h:outputText value="Meine ToDo-Liste" class="tableheader"/>
-		
+			<div>
+				<h:outputText value="#{toDoListMB.toDoList}"/>
+			</div>
 		<h:dataTable value="#{toDoListMB.toDoList.toDos}" var="todo">
 			<h:column>
 				<f:facet name="header">
@@ -26,9 +29,7 @@
 				<h:selectBooleanCheckbox value="#{todo.done}" />
 			</h:column>
 		</h:dataTable>
-		
 		<h:commandButton value="Speichern" action="#{toDoListMB.save}" />
-	</h:form>  
-	
+	</h:form>
 </body>
 </html>
