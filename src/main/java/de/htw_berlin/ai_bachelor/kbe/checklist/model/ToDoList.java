@@ -22,6 +22,19 @@ public class ToDoList implements Serializable {
 	public List<ToDo> getToDos() {
 		return toDos;
 	}
+	
+	public int getCountOfDone() {
+		return (int) toDos.stream().filter((todo) -> todo.isDone()).count();
+	}
+	
+	public int getCountOfTodo() {
+		return toDos.size();
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("Derzeit sind %d von %d ToDos erledigt.", getCountOfDone(), getCountOfTodo());
+	}
 
 	private void setToDos() {
 		toDos.add(new ToDo("KBE: Aufgabenzettel 2 bearbeiten"));
