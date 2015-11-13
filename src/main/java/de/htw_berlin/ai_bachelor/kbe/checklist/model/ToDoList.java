@@ -6,34 +6,24 @@ import java.util.List;
 
 
 public class ToDoList implements Serializable {
-	
 
 	private static final long serialVersionUID = 1L;
-	
 	private List<ToDo> toDos =  new ArrayList<ToDo>();
-	
-	
+
 	public ToDoList() {
-		super();
 		this.setToDos();
 	}
-	
-	
+
 	public List<ToDo> getToDos() {
 		return toDos;
 	}
-	
+
 	public int getCountOfDone() {
 		return (int) toDos.stream().filter(ToDo::isDone).count();
 	}
-	
-	public int getCountOfTodo() {
+
+	public int getCount() {
 		return toDos.size();
-	}
-	
-	@Override
-	public String toString() {
-		return String.format("Derzeit sind %d von %d ToDos erledigt.", getCountOfDone(), getCountOfTodo());
 	}
 
 	private void setToDos() {
