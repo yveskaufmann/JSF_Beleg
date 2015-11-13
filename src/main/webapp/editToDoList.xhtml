@@ -11,25 +11,29 @@
 </h:head>
 
 <body>
-		<header>
+	<div id="outerframe">
+		<div>
 			<h:outputText value="Meine ToDo-Liste" class="tableheader"/>
-		</header>
-    <h:form id="form"  >
-			<div>
-				<h:outputText value="#{toDoListMB.toDoList}"/>
+		</div>
+	    <h:form id="form"  >
+				<div>
+					<h:outputText value="#{toDoListMB.toDoList}"/>
+				</div>
+			<h:dataTable value="#{toDoListMB.toDoList.toDos}" var="todo" class="listbody">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Todo"/>
+					</f:facet>
+					<h:outputText value="#{todo.name}"/>
+				</h:column>
+				<h:column>
+					<h:selectBooleanCheckbox value="#{todo.done}" />
+				</h:column>
+			</h:dataTable>
+			<div id="savebtn">
+				<h:commandButton value="Speichern" action="#{toDoListMB.save}"/>
 			</div>
-		<h:dataTable value="#{toDoListMB.toDoList.toDos}" var="todo">
-			<h:column>
-				<f:facet name="header">
-					<h:outputText value="Todo"/>
-				</f:facet>
-				<h:outputText value="#{todo.name}"/>
-			</h:column>
-			<h:column>
-				<h:selectBooleanCheckbox value="#{todo.done}" />
-			</h:column>
-		</h:dataTable>
-		<h:commandButton value="Speichern" action="#{toDoListMB.save}" />
-	</h:form>
+		</h:form>
+	</div>
 </body>
 </html>
