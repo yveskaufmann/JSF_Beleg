@@ -1,9 +1,13 @@
+.settings/
+.classpath
+.project
 .svn/
 .idea/
 *.iml
 bin/
 build/
 target/
+META-INF/
 
 # OS Specific Files
 .DS_Store
