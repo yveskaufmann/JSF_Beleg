@@ -1,0 +1,19 @@
+c - Der Source-Code liegt im src-Folder welcher sich im root befindet.
+	Es gibt einmal den Main-Source-Code, welcher das eigentlichen Code beinhaltet
+	und es gibt den Test-Source-Code.
+	Beim Ausführen wird "Hello World" auf der Console ausgegeben,
+
+e - Beim Kompilieren wird ein target-Folder angelegt. In diesem befinden sich mehrere Sub-Folder,
+	unter Anderem classes, in der sich die kompilierten Klassen befinden, und weitere Sub-Folder mit
+	Informationen über den Buildvorgang (Welche Files wurden angefasst? Welche Files wurden generiert? ...).
+	
+g - Es wurde ein Test ausgeführt, welcher erfolgreich war (Hard-Coded).
+	Im target-Folder wurden mehrere Sub-Folder hinzugefügt. 
+	Darunter ein weiterer Folder mit den kompilierten Test-Klassen und ein Folder
+	mit Reports, über den Ablauf der Tests in txt-Form und XML-Form (mehr Informationen).
+	
+h - Es wurden Eclipsespezifische Folder und Files angelegt.
+
+j - 
+
+k - Der target-Folder wird gelöscht.
