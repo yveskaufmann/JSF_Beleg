@@ -15,8 +15,7 @@ public abstract class FixedMultipyCounter implements Counter {
 
 	@Override
 	public Counter increment() {
-		this.counter.increment();
-		return this;
+		return this.counter.increment();
 	}
 	
 	@Override
