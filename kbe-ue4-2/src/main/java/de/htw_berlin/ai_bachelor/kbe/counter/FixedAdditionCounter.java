@@ -11,8 +11,9 @@ public abstract class FixedAdditionCounter implements Counter {
 	}
 	
 	@Override
-	public void increment() {
+	public Counter increment() {
 		this.count += addition;
+		return this;
 	}
 
 	@Override

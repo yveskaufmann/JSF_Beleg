@@ -10,7 +10,7 @@ public interface Counter {
 	 * Increment the internal state of the counter 
 	 * by an implementation based amount.
 	 */
-	void increment();
+	Counter increment();
 	
 	/**
 	 *

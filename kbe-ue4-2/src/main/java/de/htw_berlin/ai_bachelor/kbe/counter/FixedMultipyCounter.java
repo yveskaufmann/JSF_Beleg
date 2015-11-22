@@ -6,15 +6,17 @@ public abstract class FixedMultipyCounter implements Counter {
 	
 	protected FixedMultipyCounter(int multiplicator) {
 		counter = new FixedAdditionCounter(1, multiplicator) {
-			public void increment() {
+			public Counter increment() {
 				this.count *= addition;
+				return this;
 			};
 		};
 	}
 
 	@Override
-	public void increment() {
+	public Counter increment() {
 		this.counter.increment();
+		return this;
 	}
 	
 	@Override
