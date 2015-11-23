@@ -9,8 +9,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( new FormatedDate(
-            15, 10, 2015
-        ) );
+        FormatedDate fDate = new FormatedDate(15, 10, 2015); 
+        System.out.println(fDate);
+        fDate.setDateFormat(new DateFormatISO());
+        System.out.println(fDate);
     }
 }
