@@ -4,6 +4,7 @@ import de.htw_berlin.ai_bachelor.kbe.counter.impl.SimpleCounter;
 import de.htw_berlin.ai_bachelor.kbe.util.Singelton;
 import de.htw_berlin.ai_bachelor.kbe.util.StringUtils;
 
+
 public class CounterFactory {
 	public static Counter getInstance(String name) {
 		Class<?> type = null;
@@ -14,13 +15,13 @@ public class CounterFactory {
 					String.format("The requested \"%s\" wasn't found.", name)
 			);
 		}
-		return (Counter) Singelton.of(type);	
+		return (Counter) Singelton.of(type);
 	}
 
 	private static String normalize(String name) {
 		return SimpleCounter.class.getPackage().getName() 
 				+ "." 
-				+ StringUtils.toUpperCaseFirstLetter(name) 
+				+ StringUtils.toUpperCaseFirstLetter(name)
 				+ "Counter";
 	}
 }
