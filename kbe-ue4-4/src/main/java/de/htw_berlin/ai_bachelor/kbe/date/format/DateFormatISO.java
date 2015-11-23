@@ -2,25 +2,11 @@ package de.htw_berlin.ai_bachelor.kbe.date.format;
 
 import de.htw_berlin.ai_bachelor.kbe.date.Date;
 
-public class DateFormatISO implements DateFormat {
-	private Date date;
-	
-	public DateFormatISO() {
-		this(null);
-	}
-	
-	public DateFormatISO(Date _date) {
-		date = _date;
-	}
-	
+public class DateFormatISO implements DateFormatter {
+
 	@Override
-	public void setDate(Date _date) {
-		date = _date;
-	}
-	
-	@Override
-	public String toString() {
-		return String.format("%d/%d/%d",
+	public String format(Date date) {
+		return String.format("%02d/%02d/%d",
 			date.getMonth(), 
 			date.getDay(),
 			date.getYear()

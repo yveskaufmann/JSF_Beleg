@@ -15,4 +15,12 @@
     <properties>
         <exec.mainClass>de.htw_berlin.ai_bachelor.kbe.date.App</exec.mainClass>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.htw_berlin.ai_bachelor.kbe</groupId>
+            <artifactId>utils</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 </project>

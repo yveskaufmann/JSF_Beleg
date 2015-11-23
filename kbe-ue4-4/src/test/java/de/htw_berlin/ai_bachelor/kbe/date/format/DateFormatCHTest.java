@@ -8,28 +8,29 @@ import org.junit.Before;
 
 public class DateFormatCHTest {
 	Date date;
-	DateFormatCH format;
-	
+	DateFormatCH formatter;
+
 	@Before
 	public void createDate() {
 		date = new Date(15, 10, 2015);
-		format = new DateFormatCH(date);
+		formatter = new DateFormatCH();
 	}
-	
+
 	@Test
-	public void toStringSimple() {
-		assertEquals("15.10.2015", format.toString());
+	public void format_aassignDate_ResultAsExpected() {
+		assertEquals("15.10.2015", formatter.format(date));
 	}
-	
+
 	@Test
-	public void toStringChangedDate() {
-		format.setDate(new Date(24, 12, 2018));
-		assertEquals("24.12.2018", format.toString());
+	public void format_aasignChangedDate_ResultAsExpected() {
+		date.setDay(1);
+		assertEquals("01.10.2015", formatter.format(date));
 	}
-	
+
 	@Test
-	public void toStringChangedDateYear() {
-		date.setYear(2016);
-		assertEquals("15.10.2016", format.toString());
+	public void format_aasignFirstJanuarOf2015_DateComponentsAreTwoDigits() {
+		assertEquals("01.01.2015", formatter.format(
+			new Date(1,1,2015)
+		));
 	}
 }
