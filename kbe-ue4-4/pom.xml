@@ -8,8 +8,7 @@
         <artifactId>exercises</artifactId>
         <version>1.0</version>
     </parent>
-    <groupId>de.htw_berlin.ai_bachelor.kbe.date</groupId>
-    <artifactId>kbe-ue4-4</artifactId>
+    <artifactId>date</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>kbe-ue4-4</name>
     <url>http://maven.apache.org</url>

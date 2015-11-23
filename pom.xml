@@ -18,7 +18,6 @@
         <module>kbe-ue4-4</module>
         <module>utils</module>
     </modules>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
