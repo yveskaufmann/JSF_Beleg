@@ -21,7 +21,7 @@ public class CounterFactory {
 	private static String normalize(String name) {
 		return SimpleCounter.class.getPackage().getName() 
 				+ "." 
-				+ StringUtils.toUpperCaseFirstLetter(name)
+				+ StringUtils.toUpperCaseFirstLetter(name.trim())
 				+ "Counter";
 	}
 }

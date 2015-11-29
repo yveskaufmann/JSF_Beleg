@@ -7,14 +7,14 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
 
-public class DateFormatterISOTest {
+public class ISODateFormatterTest {
 	Date date;
 	DateFormatter formatter;
 
 	@Before
 	public void createTestDate() {
 		date = new Date(15, 10, 2015);
-		formatter = new DateFormatterISO();
+		formatter = new ISODateFormatter();
 	}
 
 	@Test

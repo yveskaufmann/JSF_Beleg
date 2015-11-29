@@ -6,14 +6,14 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
 
-public class DateFormatterUSTest {
+public class USDateFormatterTest {
 	Date date;
-	DateFormatterUS formatter;
+	USDateFormatter formatter;
 
 	@Before
 	public void createDate() {
 		date = new Date(15, 10, 2015);
-		formatter = new DateFormatterUS();
+		formatter = new USDateFormatter();
 	}
 
 	@Test

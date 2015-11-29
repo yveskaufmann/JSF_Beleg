@@ -2,8 +2,7 @@ package de.htw_berlin.ai_bachelor.kbe.util;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertTrue;
+import static de.htw_berlin.ai_bachelor.kbe.util.AssertsUtils.*;
 
 public class SingletonTest {
 
@@ -13,13 +12,8 @@ public class SingletonTest {
 
 		Object singletonObject = Singleton.of(type);
 
-		assertEquals(type, singletonObject.getClass());
+		assertIsInstanceOf(singletonObject, type);
 		assertSingleton(singletonObject);
-	}
-
-	private void assertSingleton(Object object) {
-		assertNotNull(object);
-		assertTrue(object == Singleton.of(object.getClass()));
 	}
 
 	@Test(expected = IllegalArgumentException.class)
