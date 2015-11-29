@@ -8,27 +8,27 @@ import org.junit.Before;
 
 public class DateFormatCHTest {
 	Date date;
-	DateFormatCH formatter;
+	DateFormatterCH formatter;
 
 	@Before
 	public void createDate() {
 		date = new Date(15, 10, 2015);
-		formatter = new DateFormatCH();
+		formatter = new DateFormatterCH();
 	}
 
 	@Test
-	public void format_aassignDate_ResultAsExpected() {
+	public void testFormatWithTestDate() {
 		assertEquals("15.10.2015", formatter.format(date));
 	}
 
 	@Test
-	public void format_aasignChangedDate_ResultAsExpected() {
+	public void testFormatWithChangedTestDate() {
 		date.setDay(1);
 		assertEquals("01.10.2015", formatter.format(date));
 	}
 
 	@Test
-	public void format_aasignFirstJanuarOf2015_DateComponentsAreTwoDigits() {
+	public void ensuresThatDayAndMonthAreTwoDigits() {
 		assertEquals("01.01.2015", formatter.format(
 			new Date(1,1,2015)
 		));

@@ -6,31 +6,31 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
 
-public class DateFormatUSTest {
+public class DateFormatterUSTest {
 	Date date;
-	DateFormatUS formatter;
+	DateFormatterUS formatter;
 
 	@Before
 	public void createDate() {
 		date = new Date(15, 10, 2015);
-		formatter = new DateFormatUS();
+		formatter = new DateFormatterUS();
 	}
 
 	@Test
-	public void format_aassignDate_ResultAsExpected() {
+	public void testFormatWithTestDate() {
 		assertEquals("2015-10-15", formatter.format(date));
 	}
 
 	@Test
-	public void format_aasignChangedDate_ResultAsExpected() {
+	public void testFormatWithChangedTestDate() {
 		date.setDay(1);
 		assertEquals("2015-10-01", formatter.format(date));
 	}
 
 	@Test
-	public void format_aasignFirstJanuarOf2015_DateComponentsAreTwoDigits() {
+	public void ensuresThatDayAndMonthAreTwoDigits() {
 		assertEquals("2015-01-01", formatter.format(
-			new Date(1,1,2015)
+			new Date(1, 1, 2015)
 		));
 	}
 }

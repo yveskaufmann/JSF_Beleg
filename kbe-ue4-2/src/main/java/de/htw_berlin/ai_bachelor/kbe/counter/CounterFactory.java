@@ -1,7 +1,7 @@
 package de.htw_berlin.ai_bachelor.kbe.counter;
 
 import de.htw_berlin.ai_bachelor.kbe.counter.impl.SimpleCounter;
-import de.htw_berlin.ai_bachelor.kbe.util.Singelton;
+import de.htw_berlin.ai_bachelor.kbe.util.Singleton;
 import de.htw_berlin.ai_bachelor.kbe.util.StringUtils;
 
 
@@ -15,7 +15,7 @@ public class CounterFactory {
 					String.format("The requested \"%s\" wasn't found.", name)
 			);
 		}
-		return (Counter) Singelton.of(type);
+		return (Counter) Singleton.of(type);
 	}
 
 	private static String normalize(String name) {

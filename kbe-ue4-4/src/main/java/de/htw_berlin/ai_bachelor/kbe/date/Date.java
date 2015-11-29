@@ -1,39 +1,54 @@
 package de.htw_berlin.ai_bachelor.kbe.date;
 
+import java.time.LocalDate;
+
 public class Date {
-	private int day, month, year;
-	
-	public void setDay (int _day) {
-		day = _day;
+
+	public static Date today() {
+		LocalDate today = LocalDate.now();
+		return new Date(
+			today.getDayOfMonth(),
+			today.getMonthValue(),
+			today.getYear()
+		);
 	}
-	
-	public int getDay () {
+
+	private int day;
+	private int month;
+	private int year;
+
+	public Date (int day, int month, int year) {
+		this.day = day;
+		this.month = month;
+		this.year = year;
+	}
+
+	public int getDay() {
 		return day;
 	}
-	
-	public void setMonth (int _month) {
-		month = _month;
+
+	public void setDay(int day) {
+		this.day = day;
 	}
-	
-	public int getMonth () {
+
+	public int getMonth() {
 		return month;
 	}
-	
-	public void setYear (int _year) {
-		year = _year;
+
+	public void setMonth(int month) {
+		this.month = month;
 	}
-	
-	public int getYear () {
+
+	public int getYear() {
 		return year;
 	}
-	
-	public Date () {
-		this(0, 0, 0);
+
+	public void setYear(int year) {
+		this.year = year;
 	}
-	
-	public Date (int _day, int _month, int _year) {
-		day = _day;
-		month = _month;
-		year = _year;
+
+	@Override
+	public String toString() {
+		return DateFormatterFactory.getInstance().format(this);
 	}
 }
