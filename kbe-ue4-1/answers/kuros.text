@@ -14,6 +14,6 @@ g - Es wurde ein Test ausgeführt, welcher erfolgreich war (Hard-Coded).
 	
 h - Es wurden Eclipsespezifische Folder und Files angelegt.
 
-j - 
+j - Wir bekommen ein Success und das entsprechende Jar wird in das lokale Repository installiert.  
 
 k - Der target-Folder wird gelöscht.

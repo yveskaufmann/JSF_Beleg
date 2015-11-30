@@ -8,12 +8,12 @@ import org.junit.Before;
 
 public class USDateFormatterTest {
 	Date date;
-	USDateFormatter formatter;
+	DateFormatterUS formatter;
 
 	@Before
 	public void createDate() {
 		date = new Date(15, 10, 2015);
-		formatter = new USDateFormatter();
+		formatter = new DateFormatterUS();
 	}
 
 	@Test

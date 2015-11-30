@@ -2,7 +2,7 @@ package de.htw_berlin.ai_bachelor.kbe.date.format;
 
 import de.htw_berlin.ai_bachelor.kbe.date.Date;
 
-public class ISODateFormatter implements DateFormatter {
+public class DateFormatterISO implements DateFormatter {
 
 	@Override
 	public String format(Date date) {

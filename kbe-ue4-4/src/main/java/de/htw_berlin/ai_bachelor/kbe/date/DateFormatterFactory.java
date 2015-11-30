@@ -41,8 +41,8 @@ public class DateFormatterFactory {
 	private static String normalizeClassName(String name) {
 		return DateFormatter.class.getPackage().getName()
 			+ "."
-			+ name.trim().toUpperCase()
-			+ "DateFormatter";
+			+ "DateFormatter"
+			+ name.trim().toUpperCase();
 	}
 
 	private static void ensuresClassImplementsDataFormatter(Class<?> type) {

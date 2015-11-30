@@ -1,9 +1,9 @@
 package de.htw_berlin.ai_bachelor.kbe.date;
 
 import de.htw_berlin.ai_bachelor.kbe.date.format.DateFormatter;
-import de.htw_berlin.ai_bachelor.kbe.date.format.CHDateFormatter;
-import de.htw_berlin.ai_bachelor.kbe.date.format.ISODateFormatter;
-import de.htw_berlin.ai_bachelor.kbe.date.format.USDateFormatter;
+import de.htw_berlin.ai_bachelor.kbe.date.format.DateFormatterCH;
+import de.htw_berlin.ai_bachelor.kbe.date.format.DateFormatterISO;
+import de.htw_berlin.ai_bachelor.kbe.date.format.DateFormatterUS;
 import org.junit.Test;
 
 import static de.htw_berlin.ai_bachelor.kbe.util.AssertsUtils.*;
@@ -14,7 +14,7 @@ import static de.htw_berlin.ai_bachelor.kbe.date.DateFormatterFactory.US_FORMATT
 public class DateFormatterFactoryTest {
 
 	public static final String UNKNOWN_FORMATTER = "UNKNOWN";
-	public static final Class<CHDateFormatter> DEFAULT_FORMATTER = CHDateFormatter.class;
+	public static final Class<DateFormatterCH> DEFAULT_FORMATTER = DateFormatterCH.class;
 
 	@Test
 	public void testGetInstanceReturnsDefaultFormatter() throws Exception {
@@ -24,9 +24,9 @@ public class DateFormatterFactoryTest {
 
 	@Test
 	public void testGetInstanceByName() throws Exception {
-		assertIsInstanceOf(DateFormatterFactory.getInstanceByName(CH_FORMATTER), CHDateFormatter.class);
-		assertIsInstanceOf(DateFormatterFactory.getInstanceByName(ISO_FORMATTER), ISODateFormatter.class);
-		assertIsInstanceOf(DateFormatterFactory.getInstanceByName(US_FORMATTER), USDateFormatter.class);
+		assertIsInstanceOf(DateFormatterFactory.getInstanceByName(CH_FORMATTER), DateFormatterCH.class);
+		assertIsInstanceOf(DateFormatterFactory.getInstanceByName(ISO_FORMATTER), DateFormatterISO.class);
+		assertIsInstanceOf(DateFormatterFactory.getInstanceByName(US_FORMATTER), DateFormatterUS.class);
 	}
 
 	@Test

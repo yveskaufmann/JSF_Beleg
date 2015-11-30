@@ -1,6 +1,6 @@
 package de.htw_berlin.ai_bachelor.kbe.date;
 
-import de.htw_berlin.ai_bachelor.kbe.date.format.CHDateFormatter;
+import de.htw_berlin.ai_bachelor.kbe.date.format.DateFormatterCH;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -26,7 +26,7 @@ public class DateTest {
 
 		String formattedDate = testDate.toString();
 
-		assertEquals(new CHDateFormatter().format(testDate), formattedDate);
+		assertEquals(new DateFormatterCH().format(testDate), formattedDate);
 
 	}
 }

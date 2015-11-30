@@ -8,12 +8,12 @@ import org.junit.Before;
 
 public class DateFormatCHTest {
 	Date date;
-	CHDateFormatter formatter;
+	DateFormatterCH formatter;
 
 	@Before
 	public void createDate() {
 		date = new Date(15, 10, 2015);
-		formatter = new CHDateFormatter();
+		formatter = new DateFormatterCH();
 	}
 
 	@Test

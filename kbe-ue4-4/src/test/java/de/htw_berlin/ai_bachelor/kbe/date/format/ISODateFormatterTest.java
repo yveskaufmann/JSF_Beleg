@@ -14,7 +14,7 @@ public class ISODateFormatterTest {
 	@Before
 	public void createTestDate() {
 		date = new Date(15, 10, 2015);
-		formatter = new ISODateFormatter();
+		formatter = new DateFormatterISO();
 	}
 
 	@Test
