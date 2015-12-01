@@ -16,4 +16,12 @@ public class StringUtils {
 		}
 		return name;
 	}
+
+	public static String fill(int length, final String segment) {
+		String line = "";
+		for (int i = 0; i < length; i++) {
+			line += segment;
+		}
+		return line;
+	}
 }

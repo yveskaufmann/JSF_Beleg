@@ -1,7 +1,6 @@
 package de.htw_berlin.ai_bachelor.kbe.tree.predicate;
 
 import de.htw_berlin.ai_bachelor.kbe.tree.Tree;
-import de.htw_berlin.ai_bachelor.kbe.tree.TreePredicate;
 
 public class ComparePredicate<V extends Comparable<V>> implements TreePredicate<V> {
 

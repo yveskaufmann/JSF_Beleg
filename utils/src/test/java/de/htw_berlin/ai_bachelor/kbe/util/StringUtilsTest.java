@@ -11,4 +11,11 @@ public class StringUtilsTest {
 		String testString = "  testString ";
 		assertEquals("  TestString ", StringUtils.toUpperCaseFirstLetter(testString));
 	}
+
+	@Test
+	public void testFill() {
+		assertEquals("", StringUtils.fill(0, ""));
+		assertEquals("4242", StringUtils.fill(2, "42"));
+		assertEquals("", StringUtils.fill(-1, "42"));
+	}
 }
