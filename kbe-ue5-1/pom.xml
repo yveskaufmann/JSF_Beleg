@@ -11,6 +11,9 @@
   <version>0.1-SNAPSHOT</version>
   <name>kbe-ue5-1</name>
   <url>http://maven.apache.org</url>
+  <properties>
+    <exec.mainClass>de.htw_berlin.ai_bachelor.kbe.tree.TreeTest</exec.mainClass>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>de.htw_berlin.ai_bachelor.kbe</groupId>
