@@ -11,4 +11,11 @@
   <version>0.1-SNAPSHOT</version>
   <name>kbe-ue5-1</name>
   <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>de.htw_berlin.ai_bachelor.kbe</groupId>
+      <artifactId>utils</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
 </project>
