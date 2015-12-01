@@ -6,7 +6,12 @@ import java.util.Iterator;
 import java.util.Stack;
 
 public abstract class TreeIterator<T> implements Iterator<T> {
+
 	protected Stack<Tree<T>> stack = new Stack<>();
+
+	public TreeIterator(Tree<T> tree) {
+		addToStackWhenNonNull(tree);
+	}
 
 	@Override
 	public boolean hasNext() {
