@@ -8,7 +8,7 @@ import java.util.*;
 
 import static java.util.stream.Collectors.*;
 
-
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class TreeTest {
@@ -27,8 +27,18 @@ public class TreeTest {
 		System.out.println();
 
 		System.out.print("FilterElements: ");
-		filterElements(new ComparePredicate<>(20, 25), tree)
-			.forEach(System.out::println);
+		
+		ComparePredicate<Integer> predicate = new ComparePredicate<>(20, 50);
+		
+		String filteredElements = filterElements(predicate, tree)
+				.stream()
+				.map(Objects::toString)
+				.collect(joining(", "));
+		
+		System.out.println(filteredElements);
+		
+			
+			
 
 	}
 
