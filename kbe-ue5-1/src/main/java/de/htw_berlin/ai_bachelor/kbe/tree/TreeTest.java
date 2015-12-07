@@ -71,7 +71,7 @@ public class TreeTest {
 			.of(tree.getLeft(), tree.getRight())
 			.map((elm) -> {
 				if (elm != null) {
-					return "\n" + export((Tree) elm, depth + 1);
+					return "\n" + export((Tree<?>) elm, depth + 1);
 				}
 				return "\n" + indention + ONE_INDENT_STRING + Objects.toString(null);
 			}).collect(joining(","));
@@ -80,10 +80,7 @@ public class TreeTest {
 			.append(indention).append("[")
 			.append(Objects.toString(tree.getValue())).append(",")
 			.append(childrenString).append("\n")
-			.append(indention).append("]");
-
+			.append(indention).append("]"); 
 	}
-
-
 
 }
