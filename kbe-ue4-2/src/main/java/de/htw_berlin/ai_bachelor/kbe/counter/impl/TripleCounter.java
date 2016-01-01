@@ -7,5 +7,4 @@ public class TripleCounter extends FixedMultipyCounter {
 	public TripleCounter() {
 		super(3);
 	}
-
 }

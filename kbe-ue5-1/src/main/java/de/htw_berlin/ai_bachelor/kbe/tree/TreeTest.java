@@ -36,9 +36,6 @@ public class TreeTest {
 				.collect(joining(", "));
 		
 		System.out.println(filteredElements);
-		
-			
-			
 
 	}
 
