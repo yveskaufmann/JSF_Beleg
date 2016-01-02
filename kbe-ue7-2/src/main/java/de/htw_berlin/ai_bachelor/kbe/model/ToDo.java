@@ -1,6 +1,9 @@
-package de.htw_berlin.ai_bachelor.kbe.checklist.model;
+package de.htw_berlin.ai_bachelor.kbe.model;
+
+import com.sun.faces.el.ELContextImpl;
 
 
+import javax.faces.context.FacesContext;
 import java.io.Serializable;
 
 public class ToDo implements Serializable {

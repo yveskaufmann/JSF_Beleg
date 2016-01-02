@@ -6,12 +6,10 @@
         <artifactId>exercises</artifactId>
         <version>1.0</version>
     </parent>
-    <groupId>ue2</groupId>
-    <artifactId>kbe-ue3-1</artifactId>
+    <artifactId>kbe-ue7-2</artifactId>
     <packaging>war</packaging>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>kbe-ue3-1</name>
-
+    <name>kbe-ue7-2 Maven Webapp</name>
+    <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
             <groupId>com.sun.faces</groupId>
@@ -25,14 +23,16 @@
             <version>2.2.12</version>
         </dependency>
 
-        <!-- If you like to use the JSP Standard Tag Library (JSTL);
-        e.g. xmlns:f="http://xmlns.jcp.org/jsf/core;
-        Documentation:
-        http://docs.oracle.com/javaee/5/tutorial/doc/bnakc.html -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
         </dependency>
+        
     </dependencies>
+    <build>
+        <finalName>kbe-ue7-2</finalName>
+    </build>
 </project>
+

@@ -19,6 +19,7 @@
     <module>kbe-ue5-1</module>
     <module>kbe-ue6</module>
         <module>kbe-ue7-1</module>
+        <module>kbe-ue7-2</module>
     </modules>
     <dependencies>
         <dependency>
