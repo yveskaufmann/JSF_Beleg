@@ -1,0 +1,82 @@
+a.
+
+    EL JSTL - EL JSP 2.0 - EL JSF 1.0 - EL JSF 1.2 - EL Facelets - EL 2.2 - EL 3.0
+    
+    Unterschiede liegen im Funktionsumfang.
+    Details siehe: (The Java EE 6 Tutorial Chapter 6 Expression Language (01.01.2016))
+    http://stackoverflow.com/questions/4812755/difference-between-jsp-el-jsf-el-and-unified-el
+    
+b.
+ 
+    Der EL-Resolver bestimmt, wo nach dem Objekt gesucht wird.
+    
+c.
+    
+     #{myBean.myBeanProperty} verwendet man, wenn man nur die Ausgabe der Property möchte. Wenn man jedoch
+     Converter oder Validator benötigt, muss man <h:outputText value="#{ myBean.myBeanProperty }" .../> verwenden.
+
+d.
+
+    Es wird vom Objekt var die Property p1 referenziert und von p1 dann p2 und zum Schluss von p2 auf p3. 
+    
+e.
+
+    - Lesender Zugriff auf Properties
+    - Schreibender Zugriff auf Properties
+    - Auswertung von Ausdrücken
+    
+f.
+
+    Impliziete Objekte stellen Information zur Verfügung, die die Session, die Anwendung, den Request oder auch der Response betreffen.
+    
+    - facesContext (Request state information)
+    - application (execution environment information)
+    - initParam (initialization parameters of this web application)
+    - session (session information)
+    - view (root of UIComponent-Tree)
+    - component (current UIComponent)
+    - cc (top-level composite component (Form ect))
+    - request (instance of HttpServletRequest)
+    - applicationScope (application scope attributes)
+    - sessionScope (session attributes)
+    - viewScope (view scope attributes)
+    - requestScope (request attributes)
+    - flowScope (maps to facesContext.getApplication().getFlowHandler().getCurrentFlowScope())
+    - flash (Map of tempory objects)
+    - param (HTTP request parameters)
+    - paramValues (values of HTTP request parameters)
+    - header (HTTP header parameters)
+    - headerValues (values of HTTP header parameters)
+    - cookie
+    - resource
+    - pageContext
+    
+g.
+
+    Man kann keine Objekte mit gleichem Namen referenzieren, da der ImplicitObjectELResolver eine höhere Prio hat.
+    
+h.
+
+    - Value and Method Expressions
+    - Arithmetic
+    - String concatenation
+    - Logical
+    - Relational
+    - Empty (null)
+    - Conditional
+    - Lambda expression (->)
+    - Assignment
+    - Semicolon
+    
+    (https://docs.oracle.com/javaee/7/tutorial/jsf-el005.htm#BNAIK)
+    
+ j.
+ 
+    Dadurch kann man eine flexiblere view aufbauen.
+    An sich ist es gut Flexibilität zu haben, aber es birgt auch die Gefahr zu viel Logik in der View zu haben.
+    
+ 2.
+ 
+ e.
+ 
+    Beim Link wird direkt zur RenderResponse gesprungen, während beim CommandLink der LifeCycle durchlaufen wird.

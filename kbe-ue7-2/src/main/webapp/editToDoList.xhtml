@@ -33,10 +33,12 @@
 					<h:selectBooleanCheckbox value="#{todo.done}" />
 				</h:column>
 			</h:dataTable>
-			<div id="savebtn" style="padding: 1em;">
+			<div id="savebtn">
 				<h:commandButton value="#{msg['todo.save']}" action="#{toDoListMB.save}"/>
+			</div>
+			<div id="timeLinks">
 				<h:link outcome="showTime">Link: ShowTime</h:link>
-				<h:commandLink action="#{clock.goToIndex}">Command-Link: ShowTime</h:commandLink>
+				<h:commandLink action="#{clock.goToIndex}">Command-Link: ShowTime</h:commandLink>			
 			</div>
 		</h:form>
 	</div>

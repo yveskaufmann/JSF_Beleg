@@ -27,4 +27,20 @@ th{text-align: left;}
 
 #savebtn {
 	text-align: right;
+	padding: 1em;
+}
+
+#timeLinks {
+	text-align: center;
+	border: 2px solid black;
+}
+
+#timeLinks a {
+    text-decoration: none;
+     margin-right: 10px;
+     margin-left: 10px;
+}
+
+#timeLinks a:hover {
+    text-decoration: underline;
 }
