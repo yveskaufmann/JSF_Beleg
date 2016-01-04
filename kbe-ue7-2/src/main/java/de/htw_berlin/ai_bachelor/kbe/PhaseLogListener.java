@@ -14,6 +14,10 @@ import java.util.stream.Collectors;
 
 public class PhaseLogListener implements PhaseListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6558923342427686701L;
 	private final Logger log = Logger.getLogger(PhaseLogListener.class.getName());
 
 	@Override
@@ -34,7 +38,7 @@ public class PhaseLogListener implements PhaseListener {
 			detailInfo
 				.append("RootViewId: " + fctx.getViewRoot().getId())
 				.append("\n")
-				.append("Count of Views: " + fctx.getViewRoot().getChildCount())
+				.append("Count of Views: " + countAllChildrens(fctx.getViewRoot()))
 				.append("\n");
 
 			if (phaseId == PhaseId.RENDER_RESPONSE) {
@@ -57,7 +61,18 @@ public class PhaseLogListener implements PhaseListener {
 	public PhaseId getPhaseId() {
 		return PhaseId.ANY_PHASE;
 	}
-
+	
+	private int countAllChildrens(UIComponent root) {
+		return countAllChildrens(root, 1);
+	}
+	
+	private int countAllChildrens(UIComponent root, int acc) {
+		for (UIComponent view : root.getChildren()) {
+			acc += countAllChildrens(view, 0);  
+		}
+		return acc + root.getChildCount();
+	}
+	
 	private String countElementsPerFamily(UIViewRoot viewRoot) {
 		Map<String, Integer> elementCountPerFamily = new HashMap<>();
 
