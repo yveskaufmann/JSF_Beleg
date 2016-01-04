@@ -8,6 +8,7 @@ a.
     
 b.
  
+    Vom engsten bis zum weitesten Scope. Request->Application Scope
     Der EL-Resolver bestimmt, wo nach dem Objekt gesucht wird.
     
 c.

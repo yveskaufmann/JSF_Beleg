@@ -1,0 +1,42 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+<h:head>
+	<h:outputStylesheet library="css" name="todo.css" />
+	<title>ToDo-Liste</title>
+</h:head>
+
+<body>
+	<div id="outerframe">
+		<div>
+			<h:outputText value="#{msg['todo.header']}" class="tableheader"/>
+		</div>
+	    <h:form id="form"  >
+				<div>
+					<h:outputFormat value="#{msg['todo.todoRatio']}">
+						<f:param name="countOfDone" value="#{toDoListMB.toDoList.countOfDone}"/>
+						<f:param name="countOfTodo" value="#{toDoListMB.toDoList.count}"/>
+					</h:outputFormat>
+				</div>
+			<h:dataTable value="#{toDoListMB.toDoList.toDos}" var="todo" class="listbody">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msg['todo.datatable.header.name']}"/>
+					</f:facet>
+					<h:outputText value="#{todo.name}"/>
+				</h:column>
+				<h:column>
+					<h:selectBooleanCheckbox value="#{todo.done}" />
+				</h:column>
+			</h:dataTable>
+			<div id="savebtn">
+				<h:commandButton value="#{msg['todo.save']}" action="#{toDoListMB.save}"/>
+			</div>
+		</h:form>
+	</div>
+</body>
+</html>
