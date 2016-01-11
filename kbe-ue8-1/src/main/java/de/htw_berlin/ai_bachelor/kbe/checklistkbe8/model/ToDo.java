@@ -1,4 +1,5 @@
-package de.htw_berlin.ai_bachelor.kbe.model;
+package de.htw_berlin.ai_bachelor.kbe.checklistkbe8.model;
+
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -11,19 +12,17 @@ public class ToDo implements Serializable {
 
 	private String name;
 	private boolean done = false;
-	private Date dueDate = null;
+	private Date dueDate;
 
 	private ToDo(String name, boolean done) {
 		this.name = name;
 		this.done = done;
 		this.dueDate = Date.from(
 			LocalDate.now()
-				.plusDays(1)
 				.atStartOfDay(ZoneId.systemDefault())
+				.plusDays(2)
 				.toInstant()
 		);
-
-
 	}
 
 	public ToDo(String name) {
@@ -50,7 +49,7 @@ public class ToDo implements Serializable {
 		return dueDate;
 	}
 
-	public void setDueDate(Date dueDate) {
-		this.dueDate = dueDate;
+	public void setDueDate(Date date) {
+		dueDate = date;
 	}
 }

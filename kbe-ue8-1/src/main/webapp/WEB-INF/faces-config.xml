@@ -5,9 +5,8 @@
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
 	<application>
-		<message-bundle>vvskMessages_de</message-bundle>
 		<resource-bundle>
-			<base-name>de.htw_berlin.ai_bachelor.kbe.checklist.messages</base-name>
+			<base-name>de.htw_berlin.ai_bachelor.kbe.checklistkbe8.messages</base-name>
 			<var>msg</var>
 		</resource-bundle>
 	</application>
