@@ -14,39 +14,58 @@ import java.util.stream.Collectors;
 
 public class PhaseLogListener implements PhaseListener {
 
-	/**
-	 * 
-	 */
+	private class Statistics {
+
+		public String id = "";
+		public int count = 0;
+		public Map<String, Integer> countsPerFamily = new HashMap<>();
+
+		public String writeStatistics(StringBuilder info, PhaseId phaseId) {
+
+			info.append("RootViewId: ").append(id)
+				.append("\n")
+				.append("Count of Views: ").append(count)
+				.append("\n");
+
+			if (phaseId == PhaseId.RENDER_RESPONSE) {
+
+				String countsPerFamilyText = this.countsPerFamily.entrySet().stream()
+					.map(entry -> entry.getKey() + ": " + entry.getValue())
+					.collect(Collectors.joining("\n"));
+
+				info.append("\nElement Count Per Family: \n")
+					.append(countsPerFamilyText)
+					.append("\n");
+			}
+
+			return info.toString();
+		}
+	}
+
+
 	private static final long serialVersionUID = -6558923342427686701L;
+
 	private final Logger log = Logger.getLogger(PhaseLogListener.class.getName());
 
 	@Override
 	public void afterPhase(PhaseEvent event) {
-		FacesContext fctx = event.getFacesContext();
+		FacesContext facesCtx = event.getFacesContext();
 		PhaseId phaseId = event.getPhaseId();
 		StringBuilder detailInfo = new StringBuilder();
 
 
 		if (phaseId == PhaseId.RESTORE_VIEW || phaseId== PhaseId.RENDER_RESPONSE) {
+
 			detailInfo.append("\n");
 			if (phaseId == PhaseId.RESTORE_VIEW) {
 				detailInfo
-					.append("Postback Request: " + fctx.isPostback())
+					.append("Postback Request: " + facesCtx.isPostback())
 					.append("\n");
 			}
 
-			detailInfo
-				.append("RootViewId: " + fctx.getViewRoot().getId())
-				.append("\n")
-				.append("Count of Views: " + countAllChildrens(fctx.getViewRoot()))
-				.append("\n");
-
-			if (phaseId == PhaseId.RENDER_RESPONSE) {
-				detailInfo
-					.append("\nElement Count Per Family: \n")
-					.append(countElementsPerFamily(fctx.getViewRoot()))
-					.append("\n");
-			}
+			UIViewRoot rootView = facesCtx.getViewRoot();
+			Statistics stats = evaluateStatistics(rootView, phaseId);
+			stats.writeStatistics(detailInfo, phaseId);
 		}
 
 		log.log(Level.INFO, "End of phase: " + phaseId.getName() + detailInfo.toString());
@@ -61,38 +80,22 @@ public class PhaseLogListener implements PhaseListener {
 	public PhaseId getPhaseId() {
 		return PhaseId.ANY_PHASE;
 	}
-	
-	private int countAllChildrens(UIComponent root) {
-		return countAllChildrens(root, 1);
-	}
-	
-	private int countAllChildrens(UIComponent root, int acc) {
-		for (UIComponent view : root.getChildren()) {
-			acc += countAllChildrens(view, 0);  
-		}
-		return acc + root.getChildCount();
-	}
-	
-	private String countElementsPerFamily(UIViewRoot viewRoot) {
-		Map<String, Integer> elementCountPerFamily = new HashMap<>();
 
-		countElementsPerFamily(viewRoot, elementCountPerFamily);
-
-		return elementCountPerFamily
-			.entrySet().stream()
-			.map(entry -> entry.getKey() + ": " + entry.getValue())
-			.collect(Collectors.joining("\n"));
+	private Statistics evaluateStatistics(UIComponent view, PhaseId phaseId) {
+		Statistics statistics = new Statistics();
+		statistics.id = view.getId();
+		evaluateStatistics(view, statistics);
+		return statistics;
 	}
 
-	private void countElementsPerFamily(UIComponent view, Map<String, Integer> elementCountPerFamily) {
-
+	private void evaluateStatistics(UIComponent view, Statistics statistics) {
 		String family = view.getFamily();
-		Integer count = elementCountPerFamily.getOrDefault(family, 0);
+		Integer count = statistics.countsPerFamily.getOrDefault(family, 0);
 
-		elementCountPerFamily.put(family, count + 1);
+		statistics.countsPerFamily.put(family, count + 1);
+		statistics.count++;
 
-		view.getChildren().forEach(v -> countElementsPerFamily(v, elementCountPerFamily));
+		view.getChildren().forEach(v -> evaluateStatistics(v, statistics));
 	}
-
 
 }
