@@ -35,16 +35,20 @@
 					<f:facet name="header">
 						<h:outputText value="#{msg['todo.datatable.header.due_date']}"/>
 					</f:facet>
-					<h:inputText value="#{todo.dueDate}" size="8">
+					<h:inputText  id="dueDate" value="#{todo.dueDate}" size="8" required="true">
 						<f:convertDateTime type="date" pattern="dd.MM.yyyy" />
 					</h:inputText>
+				</h:column>
+				<h:column>
+					<h:message for="dueDate" styleClass="validationMessage"/>
 				</h:column>
 				<h:column>
 					<h:selectBooleanCheckbox value="#{todo.done}" />
 				</h:column>
 			</h:dataTable>
-			<div id="savebtn">
+			<div class="button-row">
 				<h:commandButton value="#{msg['todo.save']}" action="#{toDoListMB.save}"/>
+				<h:commandButton value="#{msg['todo.cancel']}" action="#{toDoListMB.cancel}" immediate="true"/>
 			</div>
 		</h:form>
 	</div>

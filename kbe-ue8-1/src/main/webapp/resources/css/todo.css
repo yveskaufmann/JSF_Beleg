@@ -4,10 +4,7 @@ th{text-align: left;}
 
 .table{border: 1px solid black; border-spacing: 0px;}
 .tableheader{font-weight: bold; }
-
 /* ToDo list */
-.column1{background-color: white; width: 27em; color: black; vertical-align: top}
-.column2{background-color: #FF0000; width: 1em; color: black; vertical-align: top}
 
 #outerframe {
 	margin:auto;
@@ -18,13 +15,31 @@ th{text-align: left;}
 .listbody {
 	text-align: left;
 	border: 2px solid black;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 15px auto;
 	width: 100%;
 }
 
-#savebtn {
-	text-align: right;
+.button-row {
+	float: right;
+}
+
+.button-row::after {
+	content: "";
+	clear: right;
+}
+
+.button-row input[type="submit"], .button-row input[type="button"] {
+	margin-left: 0.5em;
+}
+
+.validationMessage:before {
+	content: "* ";
+}
+
+.validationMessage {
+	color: #ff311d;
+	font-size: 0.5em;
+	white-space: pre;
+	position: relative;
+	top: 1em;
 }

@@ -1,6 +1,7 @@
 package de.htw_berlin.ai_bachelor.kbe.checklistkbe8.model;
 
 
+import javax.validation.constraints.Future;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -12,6 +13,8 @@ public class ToDo implements Serializable {
 
 	private String name;
 	private boolean done = false;
+
+	@Future()
 	private Date dueDate;
 
 	private ToDo(String name, boolean done) {

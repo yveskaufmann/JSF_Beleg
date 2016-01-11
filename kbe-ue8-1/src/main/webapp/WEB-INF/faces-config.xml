@@ -5,6 +5,13 @@
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
 	<application>
+		<locale-config>
+			<default-locale>de_DE</default-locale>
+		</locale-config>
+
+		<message-bundle>
+			de.htw_berlin.ai_bachelor.kbe.checklistkbe8.messages
+		</message-bundle>
 		<resource-bundle>
 			<base-name>de.htw_berlin.ai_bachelor.kbe.checklistkbe8.messages</base-name>
 			<var>msg</var>
@@ -17,6 +24,11 @@
 		<navigation-case>
 			<from-outcome>save</from-outcome>
 			<to-view-id>/editToDoList.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/editToDoList.xhtml</to-view-id>
+			<redirect/>
 		</navigation-case>
 	</navigation-rule>
 
