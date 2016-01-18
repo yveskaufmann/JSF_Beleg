@@ -19,31 +19,15 @@
 		</div>
 	    <h:form id="form">
 			<div>
-
+				<h:outputLabel for="priorityMin" value="#{msg['priority.minLabel']}"/>
+				<h:inputText name="priorityMin" value="1" disabled="true"/>
+				<h:outputLabel for="priorityMax" value="#{msg['priority.maxLabel']}"/>
+				<h:inputText name="priorityMax" value="1" />
 			</div>
-
-			<h:inputText name="priorityRange" p:type="range" p:min="1" value="1">
-
-			</h:inputText>
-
 			<div class="button-row">
 				<h:commandButton value="#{msg['todo.save']}" action="#{toDoListMB.save}"/>
 				<h:commandButton value="#{msg['todo.cancel']}" action="#{toDoListMB.cancel}" immediate="true"/>
 			</div>
-
-			<div class="scale">
-				<span>1|</span><span>2|</span><span>3|</span>
-			</div>
-			<input type="range" min="0" max="100" value="50" step="20" list="tickmarks"/>
-			<datalist id="tickmarks">
-				<option>0</option>
-				<option>20</option>
-				<option>40</option>
-				<option>60</option>
-				<option>80</option>
-				<option>100</option>
-			</datalist>
-
 		</h:form>
 	</div>
 </body>

@@ -47,6 +47,7 @@
 				</h:column>
 			</h:dataTable>
 			<div class="button-row">
+				<h:commandButton value="#{msg['todo.editPriority']}" action="#{toDoListMB.editPriority}" immediate="true"/>
 				<h:commandButton value="#{msg['todo.save']}" action="#{toDoListMB.save}"/>
 				<h:commandButton value="#{msg['todo.cancel']}" action="#{toDoListMB.cancel}" immediate="true"/>
 			</div>

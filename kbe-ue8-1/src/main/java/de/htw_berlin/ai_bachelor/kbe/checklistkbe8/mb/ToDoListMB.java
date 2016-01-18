@@ -29,4 +29,8 @@ public class ToDoListMB implements Serializable {
 	public String cancel() {
 		return "cancel";
 	}
+
+	public String editPriority() {
+		return "editPriority";
+	}
 }
