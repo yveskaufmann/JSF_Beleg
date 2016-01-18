@@ -13,7 +13,7 @@ public class PriorityIntervalMB {
 	private final Interval interval;
 
 	public PriorityIntervalMB() {
-		interval = new Interval(1, 2);
+		interval = new Interval(1, 6);
 	}
 
 	public Interval getInterval() {
