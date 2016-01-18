@@ -26,7 +26,7 @@ public class ToDoListMB implements Serializable {
     	return "save";
     }
 
-	public Object cancel() {
+	public String cancel() {
 		return "cancel";
 	}
 }

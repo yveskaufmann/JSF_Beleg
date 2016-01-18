@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+	<title>#{msg['priority.header']}</title>
+</h:head>
+
+<body>
+	<div id="outerframe">
+		<div>
+			<h:outputText value="#{msg['priority.header']}" class="tableheader"/>
+		</div>
+	    <h:form id="form">
+			<div>
+
+			</div>
+
+			<h:inputText name="priorityRange" p:type="range" p:min="1" value="1">
+
+			</h:inputText>
+
+			<div class="button-row">
+				<h:commandButton value="#{msg['todo.save']}" action="#{toDoListMB.save}"/>
+				<h:commandButton value="#{msg['todo.cancel']}" action="#{toDoListMB.cancel}" immediate="true"/>
+			</div>
+
+			<div class="scale">
+				<span>1|</span><span>2|</span><span>3|</span>
+			</div>
+			<input type="range" min="0" max="100" value="50" step="20" list="tickmarks"/>
+			<datalist id="tickmarks">
+				<option>0</option>
+				<option>20</option>
+				<option>40</option>
+				<option>60</option>
+				<option>80</option>
+				<option>100</option>
+			</datalist>
+
+		</h:form>
+	</div>
+</body>
+</html>

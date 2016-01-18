@@ -43,3 +43,17 @@ th{text-align: left;}
 	position: relative;
 	top: 1em;
 }
+
+.scale span {
+	writing-mode:tb-lr;
+	-webkit-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-o-transform: rotate(90deg);
+	-ms-transform:rotate(90deg);
+	transform: rotate(90deg);
+	white-space:nowrap;
+	display:block;
+	bottom:0;
+	width:20px;
+	height:20px;
+}
