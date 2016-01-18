@@ -40,6 +40,14 @@
 					</h:inputText>
 				</h:column>
 				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msg['todo.datatable.header.priority']}"/>
+					</f:facet>
+					<h:inputText  id="priority" value="#{todo.priority}" size="3" required="true">
+						<f:convertNumber type="number" minFractionDigits="0"  />
+					</h:inputText>
+				</h:column>
+				<h:column>
 					<h:message for="dueDate" styleClass="validationMessage"/>
 				</h:column>
 				<h:column>

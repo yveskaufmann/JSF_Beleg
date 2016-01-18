@@ -31,6 +31,6 @@ public class ToDoListMB implements Serializable {
 	}
 
 	public String editPriority() {
-		return "editPriority";
+		return "editPriorities";
 	}
 }

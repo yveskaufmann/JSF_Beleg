@@ -20,13 +20,14 @@
 	    <h:form id="form">
 			<div>
 				<h:outputLabel for="priorityMin" value="#{msg['priority.minLabel']}"/>
-				<h:inputText name="priorityMin" value="1" disabled="true"/>
+				<h:inputText name="priorityMin" value="#{priorityIntervalMB.min}" disabled="true"/>
 				<h:outputLabel for="priorityMax" value="#{msg['priority.maxLabel']}"/>
-				<h:inputText name="priorityMax" value="1" />
+				<h:inputText name="priorityMax" value="#{priorityIntervalMB.max}" />
+
 			</div>
 			<div class="button-row">
-				<h:commandButton value="#{msg['todo.save']}" action="#{toDoListMB.save}"/>
-				<h:commandButton value="#{msg['todo.cancel']}" action="#{toDoListMB.cancel}" immediate="true"/>
+				<h:commandButton value="#{msg['todo.save']}" action="#{priorityIntervalMB.save}"/>
+				<h:commandButton value="#{msg['todo.cancel']}" action="#{priorityIntervalMB.cancel}" immediate="true"/>
 			</div>
 		</h:form>
 	</div>

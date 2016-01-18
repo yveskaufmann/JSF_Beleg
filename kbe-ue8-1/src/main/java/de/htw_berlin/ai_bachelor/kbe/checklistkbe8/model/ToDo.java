@@ -13,6 +13,7 @@ public class ToDo implements Serializable {
 
 	private String name;
 	private boolean done = false;
+	private int priority;
 
 	@Future()
 	private Date dueDate;
@@ -20,6 +21,7 @@ public class ToDo implements Serializable {
 	private ToDo(String name, boolean done) {
 		this.name = name;
 		this.done = done;
+		this.priority = 1;
 		this.dueDate = Date.from(
 			LocalDate.now()
 				.atStartOfDay(ZoneId.systemDefault())
@@ -54,5 +56,13 @@ public class ToDo implements Serializable {
 
 	public void setDueDate(Date date) {
 		dueDate = date;
+	}
+
+	public int getPriority() {
+		return priority;
+	}
+
+	public void setPriority(int priority) {
+		this.priority = priority;
 	}
 }
