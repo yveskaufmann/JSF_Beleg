@@ -14,18 +14,23 @@
 
 <body>
 	<div id="outerframe">
-		<div>
+		<div class="tableheader">
 			<h:outputText value="#{msg['priority.header']}" class="tableheader"/>
 		</div>
 	    <h:form id="form">
 			<div>
-				<h:outputLabel for="priorityMin" value="#{msg['priority.minLabel']}"/>
-				<h:inputText name="priorityMin" value="#{priorityIntervalMB.min}" disabled="true"/>
-				<h:outputLabel for="priorityMax" value="#{msg['priority.maxLabel']}"/>
-				<h:inputText name="priorityMax" value="#{priorityIntervalMB.max}" />
-
+				<div>
+					<h:outputLabel  for="priorityMin" value="#{msg['priority.minLabel']}"/>
+				</div>
+				<h:inputText  size="4" name="priorityMin" value="#{priorityIntervalMB.min}" disabled="true"/>
 			</div>
-			<div class="button-row">
+			<div>
+				<div>
+					<h:outputLabel  for="priorityMax" value="#{msg['priority.maxLabel']}"/>
+				</div>
+				<h:inputText size="4" name="priorityMax" value="#{priorityIntervalMB.max}" />
+			</div>
+			<div class="button-row button-row-center" style="margin-top: 1em;" >
 				<h:commandButton value="#{msg['todo.save']}" action="#{priorityIntervalMB.save}"/>
 				<h:commandButton value="#{msg['todo.cancel']}" action="#{priorityIntervalMB.cancel}" immediate="true"/>
 			</div>

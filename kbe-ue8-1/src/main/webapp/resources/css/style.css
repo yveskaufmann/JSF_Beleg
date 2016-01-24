@@ -3,7 +3,9 @@ body{font-family: arial, sans-serif; width: 60em; color: black;}
 th{text-align: left;}
 
 .table{border: 1px solid black; border-spacing: 0px;}
-.tableheader{font-weight: bold; }
+.tableheader{
+	font-weight: bold;
+	margin-bottom: 1em;}
 /* ToDo list */
 
 #outerframe {
@@ -19,6 +21,9 @@ th{text-align: left;}
 	width: 100%;
 }
 
+/******************************************************************************
+ * Button - Row
+ *****************************************************************************/
 .button-row {
 	float: right;
 }
@@ -32,6 +37,15 @@ th{text-align: left;}
 	margin-left: 0.5em;
 }
 
+.button-row-center {
+	width: 100%;
+	margin-left: auto;
+}
+
+/******************************************************************************
+ * Validation - Messages
+ *****************************************************************************/
+
 .validationMessage:before {
 	content: "* ";
 }
@@ -44,16 +58,3 @@ th{text-align: left;}
 	top: 1em;
 }
 
-.scale span {
-	writing-mode:tb-lr;
-	-webkit-transform:rotate(90deg);
-	-moz-transform:rotate(90deg);
-	-o-transform: rotate(90deg);
-	-ms-transform:rotate(90deg);
-	transform: rotate(90deg);
-	white-space:nowrap;
-	display:block;
-	bottom:0;
-	width:20px;
-	height:20px;
-}

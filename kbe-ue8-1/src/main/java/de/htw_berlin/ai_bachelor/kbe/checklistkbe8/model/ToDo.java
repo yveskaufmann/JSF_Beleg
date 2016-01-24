@@ -1,6 +1,8 @@
 package de.htw_berlin.ai_bachelor.kbe.checklistkbe8.model;
 
 
+import de.htw_berlin.ai_bachelor.kbe.checklistkbe8.validation.MyInterval;
+
 import javax.validation.constraints.Future;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -13,7 +15,9 @@ public class ToDo implements Serializable {
 
 	private String name;
 	private boolean done = false;
-	private int priority;
+
+	@MyInterval(interval = "priorityIntervalMB.interval")
+	private long priority;
 
 	@Future()
 	private Date dueDate;
@@ -58,11 +62,11 @@ public class ToDo implements Serializable {
 		dueDate = date;
 	}
 
-	public int getPriority() {
+	public long getPriority() {
 		return priority;
 	}
 
-	public void setPriority(int priority) {
+	public void setPriority(long priority) {
 		this.priority = priority;
 	}
 }

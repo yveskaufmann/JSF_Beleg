@@ -38,6 +38,7 @@
 					<h:inputText  id="dueDate" value="#{todo.dueDate}" size="8" required="true">
 						<f:convertDateTime type="date" pattern="dd.MM.yyyy" />
 					</h:inputText>
+					<h:message for="dueDate" styleClass="validationMessage"/>
 				</h:column>
 				<h:column>
 					<f:facet name="header">
@@ -45,10 +46,9 @@
 					</f:facet>
 					<h:inputText  id="priority" value="#{todo.priority}" size="3" required="true">
 						<f:convertNumber type="number" minFractionDigits="0"  />
+						<!--<f:validateLongRange minimum="#{priorityIntervalMB.min}" maximum="#{priorityIntervalMB.max}"/> -->
 					</h:inputText>
-				</h:column>
-				<h:column>
-					<h:message for="dueDate" styleClass="validationMessage"/>
+					<h:message for="priority" styleClass="validationMessage"/>
 				</h:column>
 				<h:column>
 					<h:selectBooleanCheckbox value="#{todo.done}" />

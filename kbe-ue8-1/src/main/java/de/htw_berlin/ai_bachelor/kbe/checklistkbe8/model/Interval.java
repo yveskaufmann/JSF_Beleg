@@ -1,29 +1,27 @@
 package de.htw_berlin.ai_bachelor.kbe.checklistkbe8.model;
 
-import javax.validation.constraints.Min;
-
 public class Interval {
-	private int min;
-	private int max;
+	private long min;
+	private long max;
 
-	public Interval(int min, int max) {
+	public Interval(long min, long max) {
 		this.min = min;
 		this.max = max;
 	}
 
-	public int getMin() {
+	public long getMin() {
 		return min;
 	}
 
-	public void setMin(int min) {
+	public void setMin(long min) {
 		this.min = min;
 	}
 
-	public int getMax() {
+	public long getMax() {
 		return max;
 	}
 
-	public void setMax(int max) {
+	public void setMax(long max) {
 		this.max = max;
 	}
 }

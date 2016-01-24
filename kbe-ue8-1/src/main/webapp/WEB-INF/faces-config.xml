@@ -30,7 +30,6 @@
 			<to-view-id>/editToDoList.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
-
 	</navigation-rule>
 
 </faces-config>

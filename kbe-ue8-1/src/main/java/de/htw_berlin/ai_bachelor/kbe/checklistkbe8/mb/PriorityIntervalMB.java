@@ -28,12 +28,12 @@ public class PriorityIntervalMB {
 		return "editToDoList";
 	}
 
-	public int getMin() {
+	public long getMin() {
 		return  interval.getMin();
 	}
 
-	@Min(value = 1)
-	public int getMax() {
+	@Min(value =  1)
+	public long getMax() {
 		return interval.getMax();
 	}
 
