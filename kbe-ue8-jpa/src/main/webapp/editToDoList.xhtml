@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+	<title>ToDo-Liste</title>
+</h:head>
+
+<body>
+	<div id="outerframe">
+		<div>
+			<h:outputText value="#{msg['todo.header']}" class="tableheader"/>
+		</div>
+	    <h:form id="form"  >
+				<div>
+					<h:outputFormat value="#{msg['todo.todoRatio']}">
+						<f:param name="countOfDone" value="#{toDoListMB.toDoList.countOfDone}"/>
+						<f:param name="countOfTodo" value="#{toDoListMB.toDoList.count}"/>
+					</h:outputFormat>
+				</div>
+			<h:dataTable value="#{toDoListMB.toDoList.toDos}" var="todo" class="listbody">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msg['todo.datatable.header.name']}"/>
+					</f:facet>
+					<h:outputText value="#{todo.name}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msg['todo.datatable.header.due_date']}"/>
+					</f:facet>
+					<h:inputText  id="dueDate" value="#{todo.dueDate}" size="8" required="true">
+						<f:convertDateTime type="date" pattern="dd.MM.yyyy" />
+					</h:inputText>
+					<h:message for="dueDate" styleClass="validationMessage"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="#{msg['todo.datatable.header.priority']}"/>
+					</f:facet>
+					<h:inputText  id="priority" value="#{todo.priority}" size="3" required="true">
+						<f:convertNumber type="number" minFractionDigits="0"  />
+						<!--<f:validateLongRange minimum="#{priorityIntervalMB.min}" maximum="#{priorityIntervalMB.max}"/> -->
+					</h:inputText>
+					<h:message for="priority" styleClass="validationMessage"/>
+				</h:column>
+				<h:column>
+					<h:selectBooleanCheckbox value="#{todo.done}" />
+				</h:column>
+			</h:dataTable>
+			<div class="button-row">
+				<h:commandButton value="#{msg['todo.create']}" action="#{toDoMB.create}" immediate="true"/>
+				<h:commandButton value="#{msg['todo.editPriority']}" action="#{toDoListMB.editPriority}" immediate="true"/>
+				<h:commandButton value="#{msg['todo.save']}" action="#{toDoListMB.save}"/>
+				<h:commandButton value="#{msg['todo.cancel']}" action="#{toDoListMB.cancel}" immediate="true"/>
+			</div>
+		</h:form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+@CHARSET "US-ASCII";
+body{font-family: arial, sans-serif; width: 60em; color: black;}
+th{text-align: left;}
+
+.table{border: 1px solid black; border-spacing: 0px;}
+.tableheader{
+	font-weight: bold;
+	margin-bottom: 1em;}
+/* ToDo list */
+
+#outerframe {
+	margin:auto;
+	width: 50%;
+	text-align: center;
+}
+
+.listbody {
+	text-align: left;
+	border: 2px solid black;
+	margin: 15px auto;
+	width: 100%;
+}
+
+/******************************************************************************
+ * Button - Row
+ *****************************************************************************/
+.button-row {
+	float: right;
+}
+
+.button-row::after {
+	content: "";
+	clear: right;
+}
+
+.button-row input[type="submit"], .button-row input[type="button"] {
+	margin-left: 0.5em;
+}
+
+.button-row-center {
+	width: 100%;
+	margin-left: auto;
+}
+
+/******************************************************************************
+ * Validation - Messages
+ *****************************************************************************/
+
+.validationMessage:before {
+	content: "* ";
+}
+
+.validationMessage {
+	color: #ff311d;
+	font-size: 0.5em;
+	white-space: pre;
+	position: relative;
+	top: 1em;
+}
+
