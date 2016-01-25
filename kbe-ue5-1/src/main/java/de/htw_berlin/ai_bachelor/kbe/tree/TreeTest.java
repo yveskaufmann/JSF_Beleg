@@ -8,7 +8,6 @@ import java.util.*;
 
 import static java.util.stream.Collectors.*;
 
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class TreeTest {

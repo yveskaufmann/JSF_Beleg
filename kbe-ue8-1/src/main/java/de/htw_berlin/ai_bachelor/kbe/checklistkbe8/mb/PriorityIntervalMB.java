@@ -10,7 +10,7 @@ import javax.validation.constraints.Min;
 @ManagedBean
 public class PriorityIntervalMB {
 
-	private final Interval interval;
+	private Interval interval;
 
 	public PriorityIntervalMB() {
 		interval = new Interval(1, 6);
@@ -37,7 +37,7 @@ public class PriorityIntervalMB {
 		return interval.getMax();
 	}
 
-	public void setMax(int max) {
+	public void setMax(long max) {
 		interval.setMax(max);
 	}
 }

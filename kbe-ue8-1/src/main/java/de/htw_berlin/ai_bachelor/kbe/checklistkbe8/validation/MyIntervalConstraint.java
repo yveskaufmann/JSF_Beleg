@@ -1,8 +1,6 @@
 package de.htw_berlin.ai_bachelor.kbe.checklistkbe8.validation;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 import de.htw_berlin.ai_bachelor.kbe.checklistkbe8.model.Interval;
-import org.apache.taglibs.standard.lang.jstl.parser.ELParser;
 
 import javax.el.ELContext;
 

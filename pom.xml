@@ -21,6 +21,7 @@
         <module>kbe-ue7-1</module>
         <module>kbe-ue7-2</module>
         <module>kbe-ue8-1</module>
+	<module>kbe-ue8-jpa</module>
     </modules>
     <dependencies>
         <dependency>
