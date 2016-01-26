@@ -1,6 +1,9 @@
 package de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.model;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 
@@ -11,9 +14,14 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
+@Entity
 public class ToDo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue
+	private long id;
 
 	@NotNull
 	private String name;
@@ -25,8 +33,9 @@ public class ToDo implements Serializable {
 	@NotNull
 	@Future()
 	private Date dueDate;
-
 	private boolean done;
+
+	private ToDo() {}
 	public ToDo(String name, boolean done, long priority) {
 		this.name = name;
 		this.done = done;
