@@ -1,14 +1,13 @@
 package de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.mb;
 
-import java.io.Serializable;
-
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-
 import de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.model.ToDoList;
 
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+import java.io.Serializable;
+
+@Named
 @SessionScoped
-@ManagedBean
 public class ToDoListMB implements Serializable {
 
 	private static final long serialVersionUID = 1L;

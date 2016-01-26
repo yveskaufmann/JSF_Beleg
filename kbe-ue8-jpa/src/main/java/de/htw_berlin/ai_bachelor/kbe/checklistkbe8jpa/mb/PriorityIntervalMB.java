@@ -1,14 +1,16 @@
 package de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.mb;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 import javax.validation.constraints.Min;
 
 import de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.model.Interval;
 
+import java.io.Serializable;
+
+@Named
 @ApplicationScoped
-@ManagedBean
-public class PriorityIntervalMB {
+public class PriorityIntervalMB implements Serializable {
 
 	private final Interval interval;
 
@@ -21,7 +23,7 @@ public class PriorityIntervalMB {
 	}
 
 	public String save() {
-		return "editToDoList";
+		return Pages.editToDoList;
 	}
 
 	public String cancel() {
