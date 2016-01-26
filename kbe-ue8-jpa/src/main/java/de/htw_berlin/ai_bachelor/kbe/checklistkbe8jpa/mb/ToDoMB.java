@@ -2,20 +2,20 @@ package de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.mb;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.model.ToDo;
 
-@ViewScoped
-@ManagedBean
+@Named(value = "toDoMB")
+@RequestScoped
 public class ToDoMB implements Serializable {
 	
 	private static final long serialVersionUID = -2147527261649492388L;
 	
-	//@Inject
-	//private PriorityIntervalMB intervalMB;
+	@Inject
+	private PriorityIntervalMB intervalMB;
 	private ToDo template;
 	
 	public ToDoMB() {
