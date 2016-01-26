@@ -17,32 +17,30 @@
 		<div class="tableheader">
 			<h:outputText value="#{msg['todo.create']}" class="tableheader"/>
 		</div>
-	    <h:form id="form">
+	    <h:form id="form" styleClass="left-aligned-labels">
 	    	<div>
-				<div>
-					<h:outputLabel  for="todoName" value="#{msg['todo.datatable.header.name']}"/>
-				</div>
-				<h:inputText  size="4" name="todoName" value="" />
+				<h:outputLabel  for="todoName" value="#{msg['todo.datatable.header.name']}"/>
+				<h:inputText  size="20" id="todoName" value="#{toDoMB.todo.name}" required="true" />
+				<h:message for="todoName" styleClass="validationMessage"/>
+			</div>
+
+			<div>
+				<h:outputLabel  for="todoPriority" value="#{msg['todo.datatable.header.priority']}"/>
+				<h:inputText p:type="number" size="20" id="todoPriority" value="#{toDoMB.todo.priority}" required="true" />
+				<h:message for="todoPriority" styleClass="validationMessage"/>
 			</div>
 			
 			<div>
-				<div>
-					<h:outputLabel  for="todoPriority" value="#{msg['todo.datatable.header.priority']}"/>
-				</div>
-				<h:inputText  size="4" name="todoPriority" value="" />
+				<h:outputLabel  for="todoDueDate" value="#{msg['todo.datatable.header.due_date']}"/>
+				<h:inputText  size="20" id="todoDueDate" value="#{toDoMB.todo.dueDate}" required="true">
+					<f:convertDateTime type="date" pattern="dd.MM.yyyy" />
+				</h:inputText>
+				<h:message for="todoDueDate" styleClass="validationMessage"/>
 			</div>
-			
-			<div>
-				<div>
-					<h:outputLabel  for="todoDueDate" value="#{msg['todo.datatable.header.due_date']}"/>
-				</div>
-				<h:inputText  size="4" name="todoDueDate" value="" />
-			</div>
-			
-			
+
 			<div class="button-row button-row-center" style="margin-top: 1em;" >
-				<h:commandButton value="#{msg['todo.save']}" action="#{priorityIntervalMB.save}"/>
-				<h:commandButton value="#{msg['todo.cancel']}" action="#{priorityIntervalMB.cancel}" immediate="true"/>
+				<h:commandButton value="#{msg['todo.save']}" action="#{toDoMB.save}"/>
+				<h:commandButton value="#{msg['todo.cancel']}" action="#{toDoMB.cancel}" immediate="true"/>
 			</div>
 		</h:form>
 	</div>

@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = MyIntervalConstraint.class)
 public @interface MyInterval {
-	String message() default "{de.htw_berlin.ai_bachelor.kbe.checklistkbe8.validation.MyInterval}";
+	String message() default "{de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.validation.MyInterval}";
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
 

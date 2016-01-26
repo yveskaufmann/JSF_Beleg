@@ -1,12 +1,8 @@
 @CHARSET "US-ASCII";
-body{font-family: arial, sans-serif; width: 60em; color: black;}
-th{text-align: left;}
-
-.table{border: 1px solid black; border-spacing: 0px;}
-.tableheader{
-	font-weight: bold;
-	margin-bottom: 1em;}
-/* ToDo list */
+body {
+	font-family: arial, sans-serif;
+	color: black;
+}
 
 #outerframe {
 	margin:auto;
@@ -14,11 +10,46 @@ th{text-align: left;}
 	text-align: center;
 }
 
+/******************************************************************************
+ * Todo Table
+ *****************************************************************************/
+
+.table{
+	border: 1px solid black;
+	border-spacing: 1px;
+}
+
+.table th{
+	text-align: left;
+}
+
+.tableheader{
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+
+
 .listbody {
 	text-align: left;
 	border: 2px solid black;
 	margin: 15px auto;
-	width: 100%;
+}
+
+/******************************************************************************
+ * Form Styles
+ *****************************************************************************/
+
+form.left-aligned-labels {
+	display: inline-block;
+	text-align: left;
+}
+
+form.left-aligned-labels label {
+	display: block;
+}
+
+input[type=number] {
+	text-align: right;
 }
 
 /******************************************************************************
@@ -47,14 +78,14 @@ th{text-align: left;}
  *****************************************************************************/
 
 .validationMessage:before {
-	content: "* ";
+	content: "*";
 }
 
 .validationMessage {
 	color: #ff311d;
-	font-size: 0.5em;
+	font-size: 0.8em;
 	white-space: pre;
 	position: relative;
-	top: 1em;
+	top: -0.5em;
 }
 

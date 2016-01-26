@@ -17,18 +17,16 @@
 		<div class="tableheader">
 			<h:outputText value="#{msg['priority.header']}" class="tableheader"/>
 		</div>
-	    <h:form id="form">
+	    <h:form id="form" styleClass="left-aligned-labels">
 			<div>
-				<div>
-					<h:outputLabel  for="priorityMin" value="#{msg['priority.minLabel']}"/>
-				</div>
-				<h:inputText  size="4" name="priorityMin" value="#{priorityIntervalMB.min}" disabled="true"/>
+				<h:outputLabel  for="priorityMin" value="#{msg['priority.minLabel']}"/>
+				<h:inputText p:type="number" id="priorityMin" value="#{priorityIntervalMB.min}" disabled="true"/>
+				<h:message for="priorityMin" styleClass="validationMessage"/>
 			</div>
 			<div>
-				<div>
-					<h:outputLabel  for="priorityMax" value="#{msg['priority.maxLabel']}"/>
-				</div>
-				<h:inputText size="4" name="priorityMax" value="#{priorityIntervalMB.max}" />
+				<h:outputLabel id="priorityMax" value="#{msg['priority.maxLabel']}"/>
+				<h:inputText  p:type="number"  name="priorityMax" value="#{priorityIntervalMB.max}" />
+				<h:message for="priorityMax" styleClass="validationMessage"/>
 			</div>
 			<div class="button-row button-row-center" style="margin-top: 1em;" >
 				<h:commandButton value="#{msg['todo.save']}" action="#{priorityIntervalMB.save}"/>

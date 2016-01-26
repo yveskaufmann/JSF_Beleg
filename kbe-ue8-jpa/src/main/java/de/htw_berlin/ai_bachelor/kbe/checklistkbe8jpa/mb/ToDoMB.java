@@ -14,8 +14,8 @@ public class ToDoMB implements Serializable {
 	
 	private static final long serialVersionUID = -2147527261649492388L;
 	
-	@Inject
-	private PriorityIntervalMB intervalMB;
+	//@Inject
+	//private PriorityIntervalMB intervalMB;
 	private ToDo template;
 	
 	public ToDoMB() {
@@ -25,12 +25,12 @@ public class ToDoMB implements Serializable {
 	public ToDo getTodo() {
 		return template;
 	}
-	
-	public String create() {
-		return "editToDo";
+
+	public String save() {
+		return Pages.editToDoList;
 	}
-	
-	public String submit() {
+
+	public String cancel() {
 		return Pages.editToDoList;
 	}
 }

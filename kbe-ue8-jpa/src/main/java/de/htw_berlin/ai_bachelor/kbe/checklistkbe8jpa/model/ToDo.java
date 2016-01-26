@@ -2,6 +2,7 @@ package de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.model;
 
 
 import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
 
 import de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.validation.MyInterval;
 
@@ -14,15 +15,18 @@ public class ToDo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@NotNull
 	private String name;
-	private boolean done = false;
 
+	@NotNull
 	@MyInterval(interval = "priorityIntervalMB.interval")
 	private long priority;
 
+	@NotNull
 	@Future()
 	private Date dueDate;
 
+	private boolean done;
 	public ToDo(String name, boolean done, long priority) {
 		this.name = name;
 		this.done = done;

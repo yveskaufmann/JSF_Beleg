@@ -17,7 +17,7 @@
 		<div>
 			<h:outputText value="#{msg['todo.header']}" class="tableheader"/>
 		</div>
-	    <h:form id="form"  >
+	    <h:form id="form" styleClass="left-aligned-labels">
 				<div>
 					<h:outputFormat value="#{msg['todo.todoRatio']}">
 						<f:param name="countOfDone" value="#{toDoListMB.toDoList.countOfDone}"/>
@@ -44,7 +44,7 @@
 					<f:facet name="header">
 						<h:outputText value="#{msg['todo.datatable.header.priority']}"/>
 					</f:facet>
-					<h:inputText  id="priority" value="#{todo.priority}" size="3" required="true">
+					<h:inputText p:type="number" id="priority" value="#{todo.priority}" size="4" required="true">
 						<f:convertNumber type="number" minFractionDigits="0"  />
 						<!--<f:validateLongRange minimum="#{priorityIntervalMB.min}" maximum="#{priorityIntervalMB.max}"/> -->
 					</h:inputText>
@@ -55,8 +55,8 @@
 				</h:column>
 			</h:dataTable>
 			<div class="button-row">
-				<h:commandButton value="#{msg['todo.create']}" action="#{toDoMB.create}" immediate="true"/>
-				<h:commandButton value="#{msg['todo.editPriority']}" action="#{toDoListMB.editPriority}" immediate="true"/>
+				<h:button value="#{msg['todo.create']}" outcome="editToDo.xhml" immediate="true"/>
+				<h:button value="#{msg['todo.editPriority']}" outcome="editPriorities.xhml" immediate="true"/>
 				<h:commandButton value="#{msg['todo.save']}" action="#{toDoListMB.save}"/>
 				<h:commandButton value="#{msg['todo.cancel']}" action="#{toDoListMB.cancel}" immediate="true"/>
 			</div>
