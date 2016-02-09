@@ -34,4 +34,8 @@ public class ToDoList implements Serializable {
 		toDos.add(new ToDo("Geburtstagsgeschenk besorgen"));
 		toDos.add(new ToDo("Putzen"));
 	}
+
+	public void setList(List<ToDo> list) {
+		this.toDos = list;
+	}
 }

@@ -1,7 +1,5 @@
 package de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.persistence;
 
-import de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.model.ToDo;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

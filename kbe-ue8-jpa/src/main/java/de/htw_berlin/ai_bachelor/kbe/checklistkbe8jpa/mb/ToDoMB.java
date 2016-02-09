@@ -5,10 +5,9 @@ import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
 
 import javax.inject.Named;
-import javax.persistence.*;
 
 import de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.model.ToDo;
-import de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.persistence.EMF;
+import de.htw_berlin.ai_bachelor.kbe.checklistkbe8jpa.persistence.DAO;
 
 @Named
 @RequestScoped
@@ -26,11 +25,11 @@ public class ToDoMB implements Serializable {
 	}
 
 	public String save() {
-		EntityManager em = EMF.createEntityManager();
-		em.getTransaction().begin();
-		em.persist(template);
-		em.getTransaction().commit();
-		em.close();
+		try(DAO<ToDo> dao = new DAO<>(ToDo.class)) {
+			dao.transaction(() -> {
+				dao.save(template);
+			});
+		}
 		return Pages.editToDoList;
 	}
 
